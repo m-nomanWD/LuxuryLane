@@ -1,7 +1,7 @@
 # luxery-lane - Your Modern E-commerce Store
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/luxery-lane)
+![GitHub last commit](https://img.shields.io/github/last-commit/m-nomanWD/luxery-lane)
 
 luxery-lane is a modern and elegant e-commerce store where you can discover high-quality products and elevate your shopping experience.
 
