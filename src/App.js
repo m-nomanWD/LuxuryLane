@@ -1,10 +1,36 @@
-import logo from './logo.svg'
+import { useSelector, useDispatch } from 'react-redux'
 import './App.css'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from 'react-router-dom'
+import { Home, ShoppingCart, AboutUs, WishList } from './pages'
+import { Navbar } from './components'
+import { getProducts } from './features/requestSlice/requestSlice'
+import { useEffect } from 'react'
 
 function App() {
+  const dispatch = useDispatch()
+  const { cart } = useSelector((store) => store.cart)
+  const { urlModifier } = useSelector((store) => store.products)
+
+  useEffect(() => {
+    dispatch(getProducts(urlModifier))
+  }, [])
+
   return (
     <>
-      <h1>wellcome to luxury lane!</h1>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<AboutUs />} />
+          <Route path='/cart' element={<ShoppingCart />} />
+          <Route path='/wishlist' element={<WishList />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
