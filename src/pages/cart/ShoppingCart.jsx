@@ -1,5 +1,15 @@
 import React from 'react'
+import CartContainer from '../../components/cart/cartContainer/CartContainer'
+import { Heading } from '../../components'
+import './index.css'
 
 export default function ShoppingCart() {
-  return <div>ShoppingCart</div>
+  return (
+    <>
+      <section className='main-cart-container'>
+        <Heading level={1} children='YOUR BAG' />
+        <CartContainer />
+      </section>
+    </>
+  )
 }

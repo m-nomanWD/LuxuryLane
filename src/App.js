@@ -6,7 +6,7 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom'
-import { Home, ShoppingCart, AboutUs, WishList } from './pages'
+import { Home, ShoppingCart, AboutUs, WishList, DetailView } from './pages'
 import { Navbar } from './components'
 import { getProducts } from './features/requestSlice/requestSlice'
 import { useEffect } from 'react'
@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getProducts(urlModifier))
-  }, [])
+  }, [urlModifier])
 
   return (
     <>
@@ -29,6 +29,7 @@ function App() {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/cart' element={<ShoppingCart />} />
           <Route path='/wishlist' element={<WishList />} />
+          <Route path='/detailview' element={<DetailView />} />
         </Routes>
       </BrowserRouter>
     </>

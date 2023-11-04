@@ -1,0 +1,16 @@
+main {
+  max-width: 1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 6rem auto;
+}
+header {
+  max-width: 500px;
+  text-align: center;
+}
+
+.product-conatier h1 {
+  margin: auto;
+}

@@ -21,6 +21,8 @@ export const getProducts = createAsyncThunk(
 const initialState = {
   projucts: [],
   catagroies: [],
+  productsChunk: [],
+  singleProduct: {},
   isLoading: false,
   isError: false,
   urlModifier: '/products',
@@ -28,14 +30,58 @@ const initialState = {
 const requestSlice = createSlice({
   name: 'request',
   initialState,
-  reducers: {},
+  reducers: {
+    handleModifier: (state, action) => {
+      state.urlModifier = action.payload
+    },
+    handleProductsChunk: (state, action) => {
+      const newProducts = state.projucts.filter(
+        (product) => product.category === action.payload
+      )
+      state.productsChunk = newProducts
+    },
+
+    handleInCart: (state, action) => {
+      state.projucts.map((product) => {
+        if (product.id === action.payload) {
+          product.isInCart = true
+        }
+      })
+    },
+    handleSingleProjuct: (state, action) => {
+      const newItem = state.projucts.find((item) => item.id === action.payload)
+      state.singleProduct = newItem
+    },
+    handleSingleProductInCart: (state, action) => {
+      state.singleProduct.isInCart = true
+    },
+    handleInCartRemove: (state, action) => {
+      const updatedList = state.projucts.map((product) => {
+        if (product.id === action.payload) {
+          product.isInCart = false
+          console.log(product)
+          return product
+        } else {
+          console.log(product)
+          return product
+        }
+      })
+      console.log(updatedList)
+      state.projucts = updatedList
+    },
+  },
   extraReducers: {
     [getProducts.pending]: (state) => {
       state.isLoading = true
     },
     [getProducts.fulfilled]: (state, action) => {
-      state.projucts = action.payload.products
+      const newProductList = action.payload.products.map((product) => {
+        const newItem = { ...product, isInCart: false, amount: 1 }
+        return newItem
+      })
+      state.projucts = newProductList
       state.catagroies = action.payload.catagroies
+
       state.isLoading = false
     },
     [getProducts.rejected]: (state) => {
@@ -45,3 +91,11 @@ const requestSlice = createSlice({
   },
 })
 export default requestSlice.reducer
+export const {
+  handleModifier,
+  handleProductsChunk,
+  handleSingleProjuct,
+  handleInCart,
+  handleSingleProductInCart,
+  handleInCartRemove,
+} = requestSlice.actions

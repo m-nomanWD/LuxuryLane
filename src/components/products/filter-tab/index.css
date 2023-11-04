@@ -1,0 +1,20 @@
+.filter-tab {
+  min-width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 1rem auto;
+  text-align: center;
+}
+.filter-tab a {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
