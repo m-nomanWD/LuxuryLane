@@ -54,6 +54,14 @@ const requestSlice = createSlice({
     },
     handleSingleProductInCart: (state, action) => {
       state.singleProduct.isInCart = true
+      const newList = state.projucts.map((product) => {
+        if (product.id === action.payload) {
+          product.isInCart = true
+          return product
+        } else return product
+      })
+
+      state.projucts = newList
     },
     handleInCartRemove: (state, action) => {
       const updatedList = state.projucts.map((product) => {

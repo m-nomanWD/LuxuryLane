@@ -5,5 +5,20 @@ import {
   ChevronDown,
   QuickView,
   Star,
+  PlusIcon,
+  MinusIcon,
+  HomeIcone,
+  DeleteItem,
 } from './icons'
-export { Heart, ShoppingCart, ChevronDown, ChevronUp, QuickView, Star }
+export {
+  Heart,
+  ShoppingCart,
+  ChevronDown,
+  ChevronUp,
+  QuickView,
+  Star,
+  PlusIcon,
+  HomeIcone,
+  MinusIcon,
+  DeleteItem,
+}

@@ -33,10 +33,7 @@
   font-weight: 700;
 }
 .cart-info > h6 {
-  letter-spacing: 2px;
-  font-size: 16px;
-  font-weight: 400;
-  cursor: pointer;
+  margin-top: -0.5rem;
 }
 .cart-amount {
   display: flex;

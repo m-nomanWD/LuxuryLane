@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-import { ChevronDown, ChevronUp } from '../../../constants'
+import { ChevronDown, ChevronUp, DeleteItem } from '../../../constants'
 import { UseSelector, useDispatch } from 'react-redux'
 import {
   increase,
@@ -26,7 +26,7 @@ export default function CartItem({ item }) {
             dispatch(handleInCartRemove(id))
           }}
         >
-          remove
+          <DeleteItem />
         </h6>
       </div>
       <div className='cart-amount'>

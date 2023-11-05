@@ -6,7 +6,14 @@ import {
   Route,
   BrowserRouter,
 } from 'react-router-dom'
-import { Home, ShoppingCart, AboutUs, WishList, DetailView } from './pages'
+import {
+  Home,
+  ShoppingCart,
+  AboutUs,
+  WishList,
+  DetailView,
+  CheckOut,
+} from './pages'
 import { Navbar } from './components'
 import { getProducts } from './features/requestSlice/requestSlice'
 import { useEffect } from 'react'
@@ -30,6 +37,7 @@ function App() {
           <Route path='/cart' element={<ShoppingCart />} />
           <Route path='/wishlist' element={<WishList />} />
           <Route path='/detailview' element={<DetailView />} />
+          <Route path='/checkout' element={<CheckOut />} />
         </Routes>
       </BrowserRouter>
     </>

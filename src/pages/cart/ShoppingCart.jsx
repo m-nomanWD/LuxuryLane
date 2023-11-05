@@ -7,7 +7,9 @@ export default function ShoppingCart() {
   return (
     <>
       <section className='main-cart-container'>
-        <Heading level={1} children='YOUR BAG' />
+        <article className='header-cart'>
+          <Heading level={1} children='YOUR BAG' />
+        </article>
         <CartContainer />
       </section>
     </>

@@ -4,7 +4,7 @@ import './index.css'
 import { Link } from 'react-router-dom'
 import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
 import { Heading } from '../../../components/index'
-import { HomeIcone } from '../../../constants/icons'
+import { ChevronDown, HomeIcone } from '../../../constants/icons'
 export default function CartContainer() {
   const { cartItems, total } = useSelector((store) => store.cart)
   if (cartItems.length === 0) {
@@ -23,7 +23,21 @@ export default function CartContainer() {
         console.log(item)
         return <CartItem key={item.id} item={item} />
       })}
-      <h6>{total}</h6>
+      <footer>
+        <div className='div'>
+          <div className='total-text'>
+            <h4>TOTAL</h4>
+          </div>
+          <div className='total-amount'>
+            <h3>{`$ ${total}`}</h3>
+          </div>
+        </div>
+        <Link style={{ width: '180px' }} to={'/checkout'}>
+          <button className='primary-button button btn-custom'>
+            Process Furture
+          </button>
+        </Link>
+      </footer>
     </section>
   )
 }
