@@ -2,11 +2,15 @@ import React from 'react'
 import CartItem from '../cartItem/CartItem'
 import './index.css'
 import { Link } from 'react-router-dom'
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
+import { useDispatch, useSelector } from 'react-redux'
 import { Heading } from '../../../components/index'
 import { ChevronDown, HomeIcone } from '../../../constants/icons'
+import { handleShopedProducts } from '../../../features/checkout/checkout'
 export default function CartContainer() {
   const { cartItems, total } = useSelector((store) => store.cart)
+  const { productsShoped } = useSelector((store) => store.checkout)
+  const dispatch = useDispatch()
+
   if (cartItems.length === 0) {
     return (
       <div className='empty-cart'>
@@ -33,7 +37,10 @@ export default function CartContainer() {
           </div>
         </div>
         <Link style={{ width: '180px' }} to={'/checkout'}>
-          <button className='primary-button button btn-custom'>
+          <button
+            className='primary-button button btn-custom'
+            onClick={() => dispatch(handleShopedProducts({ total, cartItems }))}
+          >
             Process Furture
           </button>
         </Link>

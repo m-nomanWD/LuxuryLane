@@ -1,8 +1,16 @@
 import React from 'react'
 import { styles } from '.'
+import { useDispatch, useSelector } from 'react-redux'
+import { handleFormIsOpen } from '../../features/checkout/checkout'
 export default function ShippingForm() {
+  const dispatch = useDispatch()
+  const { shippingForm } = useSelector((store) => store.checkout)
+  const { shippingCharges, isOpenShipping } = shippingForm
   return (
-    <form action='' className={styles.hideForm}>
+    <form
+      action=''
+      className={isOpenShipping ? styles.subForm2 : styles.hideForm}
+    >
       <div className={styles.heading}>
         <span>2</span> <h2>Shipping Methood</h2>
       </div>
@@ -36,8 +44,24 @@ export default function ShippingForm() {
         </div>
       </div>
       <div className={styles.btnContainer}>
-        <button className={styles.GoBack}>Contect information</button>
-        <button className='primary-button button'>Payment</button>
+        <button
+          className={styles.GoBack}
+          onClick={(e) => {
+            e.preventDefault()
+            dispatch(handleFormIsOpen(1))
+          }}
+        >
+          <span>{`<`}</span> Contect
+        </button>
+        <button
+          className='primary-button button'
+          onClick={(e) => {
+            e.preventDefault()
+            dispatch(handleFormIsOpen(2))
+          }}
+        >
+          Payment
+        </button>
       </div>
     </form>
   )
