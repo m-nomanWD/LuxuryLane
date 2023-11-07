@@ -1,20 +1,22 @@
 import React from 'react'
 import { styles } from '.'
 import { UseSelector, useDispatch, useSelector } from 'react-redux'
-import { handleFormIsOpen } from '../../features/checkout/checkout'
-import { useRef } from 'react'
+import {
+  handleForm1Input,
+  handleFormIsOpen,
+} from '../../features/checkout/checkout'
+import { useState } from 'react'
 import toast from 'react-hot-toast'
 
 export default function ContactForm() {
-  var emailRef = useRef('')
-  var contactRef = useRef('')
+  var [email, setEmail] = useState('')
+  var [contact, setContact] = useState('')
   const dispatch = useDispatch()
   const { contactForm, shippingForm, paymentForm } = useSelector(
     (store) => store.checkout
   )
-  const { isOpenContact, email, contact } = contactForm
+  const { isOpenContact } = contactForm
 
-  const { cardNumber, CVV, expiryDate, billingZip, isOpenPayment } = paymentForm
   return (
     <form
       action=''
@@ -32,10 +34,9 @@ export default function ContactForm() {
             type='email'
             name='email'
             className={styles.input}
-            ref={emailRef}
+            value={email}
             onChange={(e) => {
-              emailRef = e.currentTarget.value
-              console.log(emailRef)
+              setEmail(e.currentTarget.value)
             }}
           />
         </div>
@@ -47,10 +48,9 @@ export default function ContactForm() {
             type='text'
             name='name'
             className={styles.input}
-            ref={contactRef}
+            value={contact}
             onChange={(e) => {
-              contactRef = e.currentTarget.value
-              console.log(contactRef)
+              setContact(e.currentTarget.value)
             }}
           />
         </div>
@@ -67,10 +67,20 @@ export default function ContactForm() {
           className='primary-button button'
           onClick={(e) => {
             e.preventDefault()
-            if (emailRef == '' && contactRef == '') {
-              toast('please enter Email')
-            } else {
+            if (email === '' || contact === '') {
+              toast.error('Please enter both Email and Contact')
+            }
+
+            if (email !== '' && contact !== '') {
               dispatch(handleFormIsOpen(3))
+              dispatch(
+                handleForm1Input({
+                  email,
+                  contact,
+                })
+              )
+              setEmail('')
+              setContact('')
             }
           }}
         >

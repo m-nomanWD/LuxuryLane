@@ -1,11 +1,15 @@
 import React from 'react'
 import { styles } from '.'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleFormIsOpen } from '../../features/checkout/checkout'
+import {
+  handleFormIsOpen,
+  handleForm2Input,
+} from '../../features/checkout/checkout'
 export default function ShippingForm() {
   const dispatch = useDispatch()
   const { shippingForm } = useSelector((store) => store.checkout)
   const { shippingCharges, isOpenShipping } = shippingForm
+  const [shipping, setShipping] = React.useState('free')
   return (
     <form
       action=''
@@ -17,28 +21,50 @@ export default function ShippingForm() {
 
       <div className={styles.formControls}>
         <div className={styles.radioBtnContainer}>
-          <input className={styles.radioBtn} type='radio' name='shipping' />
+          <input
+            className={styles.radioBtn}
+            type='radio'
+            name='shipping'
+            onClick={() => dispatch(handleForm2Input(0))}
+          />
           <div>Free Shipping</div>
           <h3>free</h3>
         </div>
       </div>
       <div className={styles.formControls}>
         <div className={styles.radioBtnContainer}>
-          <input className={styles.radioBtn} type='radio' name='shipping' />
+          <input
+            className={styles.radioBtn}
+            type='radio'
+            name='shipping'
+            onClick={() => {
+              dispatch(handleForm2Input(10))
+            }}
+          />
           <div>Flat Rate</div>
           <h3>$10</h3>
         </div>
       </div>
       <div className={styles.formControls}>
         <div className={styles.radioBtnContainer}>
-          <input className={styles.radioBtn} type='radio' name='shipping' />
+          <input
+            className={styles.radioBtn}
+            type='radio'
+            name='shipping'
+            onClick={() => dispatch(handleForm2Input(16))}
+          />
           <div>UPS Ground</div>
           <h3>$16</h3>
         </div>
       </div>
       <div className={styles.formControls}>
         <div className={styles.radioBtnContainer}>
-          <input className={styles.radioBtn} type='radio' name='shipping' />
+          <input
+            className={styles.radioBtn}
+            type='radio'
+            name='shipping'
+            onClick={() => dispatch(handleForm2Input(20))}
+          />
           <div>UPS Air</div>
           <h3>$20</h3>
         </div>

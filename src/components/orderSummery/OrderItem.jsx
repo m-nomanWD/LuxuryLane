@@ -12,7 +12,7 @@ export default function OrderItem({ product }) {
         <h6>{title}</h6>
         <div className={styles.checkoutPrice}>
           <h3>{`Qty ${amount}`}</h3>
-          <h3>{` $${amount * price}`}</h3>
+          <h3>{` $${(amount * price).toFixed(1)}`}</h3>
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Heart, ShoppingCart } from '../../constants/icons'
 import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
@@ -7,6 +7,7 @@ import './navbar.css'
 
 function Navbar() {
   const { amount } = useSelector((store) => store.cart)
+  const { amountWishlist } = useSelector((store) => store.wishlist)
   return (
     <nav>
       <div className='nav-center'>
@@ -27,6 +28,7 @@ function Navbar() {
           </li>
           <li className='nav-link'>
             <Link to='/wishlist'>
+              <span className='cart-amount-span'>{amountWishlist}</span>
               <Heart className='icon' />
             </Link>
           </li>

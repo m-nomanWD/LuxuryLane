@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import { useDispatch } from 'react-redux'
 export const ShoppingCart = () => {
   return (
@@ -18,7 +19,12 @@ export const ShoppingCart = () => {
   )
 }
 
-export const Heart = () => {
+export const Heart = ({ onClickAction }) => {
+  const dispatch = useDispatch()
+  const handleSingleItem = () => {
+    dispatch(onClickAction)
+    toast.success('product added to wishlist')
+  }
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -27,6 +33,7 @@ export const Heart = () => {
       strokeWidth={1.5}
       stroke='currentColor'
       className='w-6 h-6'
+      onClick={handleSingleItem}
     >
       <path
         strokeLinecap='round'

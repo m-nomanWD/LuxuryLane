@@ -7,6 +7,7 @@ import ProductsContainer from './products/projucts-container/ProductsContainer'
 import Product from './products/product/Product'
 import FilterTab from './products/filter-tab/FilterTab'
 import Hero from './hero/Hero'
+import WishListContainer from './wishlist/WishList'
 export {
   Navbar,
   Button,
@@ -17,4 +18,5 @@ export {
   Product,
   FilterTab,
   Hero,
+  WishListContainer,
 }

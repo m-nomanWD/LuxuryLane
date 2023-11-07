@@ -14,7 +14,7 @@ export default function OrderSummery() {
       })}
       <div className={styles.suuTotal}>
         <span>Sub Total:</span>
-        <span>{`$ ${total}`}</span>
+        <span>{`$ ${total.toFixed(1)}`}</span>
       </div>
       <div className={styles.shippingCharges}>
         <span>Shipping:</span>
@@ -26,12 +26,18 @@ export default function OrderSummery() {
       </div>
       <div className={styles.tax}>
         <span>Sales Tax: </span>
-        <span>{`$ ${(3 / 100) * total}`}</span>
+        <span>{`$ ${((3 / 100) * total).toFixed(1)}`}</span>
       </div>
       <div className={styles.grandeTotal}>
         <span>Grande Total:</span>
-        <span>{`$ ${
-          total + shippingForm.shippingCharges + (3 / 100) * total
+        <span>{`$  ${
+          shippingForm.shippingCharges !== 0
+            ? (
+                total +
+                shippingForm.shippingCharges +
+                (3 / 100) * total
+              ).toFixed(1)
+            : (total + 0 + (3 / 100) * total).toFixed(1)
         }`}</span>
       </div>
     </aside>

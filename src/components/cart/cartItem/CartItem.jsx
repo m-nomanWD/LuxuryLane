@@ -36,7 +36,7 @@ export default function CartItem({ item }) {
         <span>{amount}</span>
         <span
           onClick={() => {
-            amount === 1 ? dispatch(removeItem)(item) : dispatch(decrease(item))
+            amount === 1 ? dispatch(removeItem(item)) : dispatch(decrease(item))
           }}
         >
           <ChevronDown />

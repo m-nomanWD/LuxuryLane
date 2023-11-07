@@ -10,6 +10,7 @@ import {
   handleSingleProjuct,
   handleInCart,
 } from '../../../features/requestSlice/requestSlice'
+import { handleAddToWishlist } from '../../../features/wishlist/wishlistSlice'
 import toast from 'react-hot-toast'
 export default function Product({ product }) {
   const { cartItems } = useSelector((store) => store.cart)
@@ -20,6 +21,7 @@ export default function Product({ product }) {
   const handleClickAction = () => {
     addToCart(product)
   }
+
   return (
     <div className='card-container'>
       <div className='card-img'>
@@ -34,7 +36,7 @@ export default function Product({ product }) {
               <QuickView onClickAction={handleSingleProjuct(id)} />
             </Link>
 
-            <Heart />
+            <Heart onClickAction={handleAddToWishlist(product)} />
           </div>
         </div>
         <div className='rating-container'>
