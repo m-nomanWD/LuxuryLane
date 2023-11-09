@@ -18,6 +18,9 @@ export default function ProductsContainer() {
       </>
     )
   } else {
+    const firstList = projucts.filter(
+      (product) => product.category === 'electronics'
+    )
     return (
       <>
         <section className='products-container'>

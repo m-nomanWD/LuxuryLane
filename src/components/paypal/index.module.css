@@ -1,0 +1,29 @@
+/* index.module.css */
+.paypalContainer {
+  display: flex;
+  justify-content: space-between;
+
+  /* Add any additional container-level styles here */
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+/* Style the PayPal button */
+button[class^='paypal'] {
+  /* Add your custom styles for the PayPal button here */
+  padding: 10px;
+  background-color: #0070ba;
+  color: #fff;
+  border: 1px solid green;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[class^='paypal']:hover {
+  background-color: #005689; /* Change the background color on hover */
+}

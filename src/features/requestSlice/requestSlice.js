@@ -6,11 +6,11 @@ export const getProducts = createAsyncThunk(
   'request/getProducts',
   async (modifier, thunkAPI) => {
     try {
-      const resp = await authFetch(modifier)
+      const resp = await authFetch('/products')
       const resp2 = await authFetch('products/categories')
 
       const data = { products: resp.data, catagroies: resp2.data }
-      console.log(data)
+
       return data
     } catch (error) {
       console.log(error)

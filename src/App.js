@@ -25,7 +25,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getProducts(urlModifier))
-  }, [urlModifier])
+  }, [])
 
   return (
     <>

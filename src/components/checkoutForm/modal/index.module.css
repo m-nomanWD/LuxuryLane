@@ -1,0 +1,96 @@
+.invoiceContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.885);
+  padding: 4rem 0;
+  box-sizing: border-box;
+}
+.invoice {
+  background-color: white;
+  width: fit-content;
+  padding: 1rem 3rem 3rem 1rem;
+  border-radius: 4px;
+  position: relative;
+  max-width: 8.3in;
+}
+
+.status {
+  color: green;
+}
+.transition {
+  color: red;
+}
+.invoice h3 {
+  margin: 0.5rem;
+}
+table,
+td,
+th {
+  border: 1px solid rgba(128, 128, 128, 0.341);
+  padding: 0.5rem;
+  margin-top: 2rem;
+  color: rgb(44, 43, 43);
+  border-collapse: collapse;
+  text-align: left;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+h3 > span {
+  color: rgb(44, 43, 43);
+  margin-right: 1rem;
+  font-weight: 400;
+}
+.invoice > h3 {
+  width: fit-content;
+
+  font-size: 24px;
+  letter-spacing: 2px;
+  border-bottom: 2px solid var(--accent-color);
+  padding: 0.25rem 0;
+  box-sizing: border-box;
+  margin: 0 auto 2rem auto;
+}
+
+.invoice > h3 > span {
+  color: var(--accent-color);
+}
+.closer:hover {
+  color: var(--accent-color);
+}
+h3 {
+  color: rgb(44, 43, 43);
+}
+
+.footer td {
+  border: none;
+}
+.footer h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.footer td:nth-child(2) {
+  text-align: right;
+}
+.invoiceFooter {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 600px) {
+  .invoice {
+    padding: 0.5rem 1.5rem;
+  }
+}

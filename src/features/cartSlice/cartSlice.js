@@ -47,7 +47,13 @@ const cartSlice = createSlice({
       state.amount -= action.payload.amount
       toast.error('item removed form cart')
     },
+    clearCart: (state, action) => {
+      state.cartItems = []
+      state.amount = 0
+      state.total = 0
+    },
   },
 })
 export default cartSlice.reducer
-export const { addToCart, increase, decrease, removeItem } = cartSlice.actions
+export const { addToCart, increase, decrease, removeItem, clearCart } =
+  cartSlice.actions
