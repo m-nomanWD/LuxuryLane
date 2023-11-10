@@ -94,7 +94,8 @@ const requestSlice = createSlice({
     },
     [getProducts.rejected]: (state) => {
       state.isLoading = false
-      state.isError = false
+      state.isError = true
+      console.log(state.isError, state.isLoading)
     },
   },
 })

@@ -8,6 +8,7 @@ export default function PaymentForm() {
   const { contactForm, shippingForm, paymentForm } = useSelector(
     (store) => store.checkout
   )
+  console.log(contactForm)
   const { contact, email } = contactForm
   const { shippingCharges } = shippingForm
   const { isOpenPayment } = paymentForm
@@ -96,6 +97,7 @@ export default function PaymentForm() {
 
           <div className={styles.paypalContainer}>
             <PayPalCheckout />
+            {/* <PayPalCheckout /> */}
           </div>
         </div>
       </div>

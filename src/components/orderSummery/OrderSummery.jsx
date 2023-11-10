@@ -10,7 +10,7 @@ export default function OrderSummery() {
     <aside>
       <h3>OrderSummery</h3>
       {productsShoped.map((product) => {
-        return <OrderItem product={product} />
+        return <OrderItem key={product.id} product={product} />
       })}
       <div className={styles.suuTotal}>
         <span>Sub Total:</span>

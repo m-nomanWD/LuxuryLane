@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Heart, ShoppingCart } from '../../constants/icons'
+import Logo from '../atoms/logo/Logo'
 import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector'
 
 import './navbar.css'
@@ -14,7 +15,7 @@ function Navbar() {
         <div className='logo-container'>
           {/* <img src="" alt="logo" />
            */}
-          <span>Luxury Lane</span>
+          <Logo />
         </div>
         <ul className='nav-links-conatiner'>
           <li className='nav-link'>

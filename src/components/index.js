@@ -8,6 +8,10 @@ import Product from './products/product/Product'
 import FilterTab from './products/filter-tab/FilterTab'
 import Hero from './hero/Hero'
 import WishListContainer from './wishlist/WishList'
+import Strip from './strip/Strip'
+import Brands from './barands/Brands'
+import Footer from './footer/Footer'
+import CountdownTimer from './counter/Counter'
 export {
   Navbar,
   Button,
@@ -19,4 +23,8 @@ export {
   FilterTab,
   Hero,
   WishListContainer,
+  Strip,
+  Brands,
+  Footer,
+  CountdownTimer,
 }

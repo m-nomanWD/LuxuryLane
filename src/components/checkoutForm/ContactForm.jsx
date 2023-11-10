@@ -9,8 +9,11 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 
 export default function ContactForm() {
+  const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/
+
   var [email, setEmail] = useState('')
   var [contact, setContact] = useState('')
+  var [isValidEmail, setIsValidEmail] = useState(true)
   const dispatch = useDispatch()
   const { contactForm, shippingForm, paymentForm } = useSelector(
     (store) => store.checkout
@@ -37,6 +40,8 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => {
               setEmail(e.currentTarget.value)
+              setIsValidEmail(emailRegex.test(email))
+              console.log(isValidEmail)
             }}
           />
         </div>
@@ -67,11 +72,15 @@ export default function ContactForm() {
           className='primary-button button'
           onClick={(e) => {
             e.preventDefault()
+
+            if (!isValidEmail && email !== '') {
+              toast.error('Please Enter a Valid Email')
+            }
             if (email === '' || contact === '') {
               toast.error('Please enter both Email and Contact')
             }
 
-            if (email !== '' && contact !== '') {
+            if (email !== '' && contact !== '' && isValidEmail === true) {
               dispatch(handleFormIsOpen(3))
               dispatch(
                 handleForm1Input({

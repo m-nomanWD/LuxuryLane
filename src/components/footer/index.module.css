@@ -1,0 +1,79 @@
+footer {
+  padding: 2rem;
+  background-color: var(--accent-color);
+  text-align: left;
+  color: rgb(238, 228, 228);
+}
+.footerContainer {
+  padding: 2rem;
+  max-width: 1040px;
+}
+.logoContainer {
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact {
+  margin-right: 3rem;
+  margin-bottom: 2rem;
+}
+.contact div {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.contact span {
+  margin-right: 4rem;
+  cursor: pointer;
+}
+.contact h4 {
+  letter-spacing: 2px;
+}
+
+.facebook > svg {
+  padding: 0;
+  transform: scale(1);
+}
+.logoContainer span {
+  color: rgb(238, 228, 228);
+}
+
+.footerContainer span svg {
+  color: #312d2d;
+  background-color: rgb(238, 228, 228);
+  padding: 0.35rem;
+  border-radius: 50%;
+  border: 1px solid rgba(49, 45, 45, 0.632);
+  cursor: pointer;
+}
+.about h3 {
+  color: rgb(49, 45, 45);
+  font-size: 32px;
+}
+.about {
+  max-width: 450px;
+}
+.socialMedia {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+p {
+  line-height: 1.5rem;
+}
+.socialMedia span {
+  margin-right: 3rem;
+}
+.socialMedia span svg {
+  fill: #312d2d;
+}
+@media screen and (max-width: 650px) {
+  .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
