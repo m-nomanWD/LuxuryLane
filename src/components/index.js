@@ -12,6 +12,8 @@ import Strip from './strip/Strip'
 import Brands from './barands/Brands'
 import Footer from './footer/Footer'
 import CountdownTimer from './counter/Counter'
+import Filter from './pagination/filter/Filter'
+import Pagination from './pagination/products/PaginationContainer'
 export {
   Navbar,
   Button,
@@ -27,4 +29,6 @@ export {
   Brands,
   Footer,
   CountdownTimer,
+  Filter,
+  Pagination,
 }

@@ -1,0 +1,15 @@
+.containerPagination {
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 2rem;
+}

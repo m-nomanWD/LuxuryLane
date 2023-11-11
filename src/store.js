@@ -4,7 +4,7 @@ import wishlistSlice from './features/wishlist/wishlistSlice'
 import requestSlice from './features/requestSlice/requestSlice'
 import checkoutSlice from './features/checkout/checkout'
 import modalSlice from './features/modal/modalSlice'
-
+import filterSlice from './features/filterSlice/filterSlice'
 const store = configureStore({
   reducer: {
     cart: cartSlice,
@@ -12,6 +12,7 @@ const store = configureStore({
     products: requestSlice,
     checkout: checkoutSlice,
     modal: modalSlice,
+    filterSlice: filterSlice,
   },
 })
 export default store

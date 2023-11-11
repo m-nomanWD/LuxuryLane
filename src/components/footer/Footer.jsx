@@ -3,7 +3,7 @@ import styles from './index.module.css'
 import Logo from '../atoms/logo/Logo'
 export default function Footer() {
   return (
-    <footer>
+    <footer className={styles.mainFooter}>
       <div className={styles.footerContainer}>
         <div className={styles.logoContainer}>
           <Logo />

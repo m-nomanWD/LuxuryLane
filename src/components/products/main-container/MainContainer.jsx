@@ -11,10 +11,10 @@ export default function MainContainer() {
   return (
     <>
       <main className='product-conatier'>
-        <header>
+        <div className='poplor'>
           <Heading level={1} children='POPULAR PRODUCTS' />
           <BodyText children='Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.' />
-        </header>
+        </div>
         <FilterTab />
         <ProductsContainer />
       </main>

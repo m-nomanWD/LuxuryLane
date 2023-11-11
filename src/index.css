@@ -106,6 +106,7 @@ svg:hover {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 600; /* Semi-Bold */
+  border-radius: 2px;
 }
 /* styles.css */
 
@@ -120,6 +121,7 @@ svg:hover {
   font-weight: 600; /* Semi-Bold */
   border: none;
   cursor: pointer;
+
   transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
 }
 

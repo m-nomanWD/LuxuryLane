@@ -6,9 +6,11 @@ main {
   flex-direction: column;
   margin: 6rem auto;
 }
-header {
+main .poplor {
   max-width: 500px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-conatier h1 {

@@ -1,7 +1,8 @@
 .card-container {
   box-sizing: border-box;
   background-color: var(--main-background);
-  width: 300px;
+  width: 250px;
+
   padding: 1.5rem 1rem;
   display: flex;
   background-color: white;
@@ -9,36 +10,39 @@
   margin: 1rem;
   border-radius: 6px;
   box-shadow: 0px 4px 8px -2px rgba(67, 67, 67, 0.226);
+  transition: 0.3s all linear;
 }
 .card-img {
-  width: 100%;
-  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .card-img img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 100%;
+  height: 120px;
+
+  object-fit: contain;
 }
 .card-container .icons-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 25px;
+
   margin: auto;
   padding: 0;
 }
 .card-container svg {
-  margin: 0 4px;
+  margin: 0 2px;
   cursor: pointer;
+  width: 20px;
 }
 
 .rating-container {
-  margin: 0.5rem 0 0 0;
+  margin: 0 0;
   display: flex;
   align-items: center;
+  font-size: 12px;
 }
 .star-fill {
   fill: var(--star-rating);
@@ -46,10 +50,26 @@
 .rating-container svg {
   color: var(--star-rating);
 }
-.card-container h3 {
-  margin: 1.5rem 0 1rem 0;
+.rating-container p {
+  font-size: 12px;
+  font-weight: 600;
   color: var(--text-on-main-background);
+}
+.card-container h3 {
+  margin: 1rem 0 0.5rem 0;
+  color: var(--text-on-main-background);
+  font-size: 14px;
+  max-width: 200px;
 }
 .card-container h2 {
   color: var(--accent-color);
+  font-size: 24px;
+}
+.card-img img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.3s all linear;
+}
+.card-container:hover {
+  box-shadow: 0px 4px 8px -2px rgba(67, 67, 67, 0.644);
 }

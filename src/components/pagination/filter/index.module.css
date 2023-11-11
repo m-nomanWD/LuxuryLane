@@ -1,0 +1,97 @@
+.filterContainer {
+  margin: 0;
+  padding: 1rem 1rem 2rem 1rem;
+  min-width: 200px;
+  max-width: 220px;
+  border: 1px solid rgba(128, 128, 128, 0.405);
+  background-color: white;
+  height: fit-content;
+  margin-right: auto;
+  align-self: flex-start;
+}
+header {
+  margin: 0 auto 0.5rem auto;
+
+  width: fit-content;
+
+  display: flex;
+}
+header > h2 {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 2px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent-color);
+}
+.catFilter {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.filterContainer h3 {
+  text-transform: capitalize;
+  text-align: left;
+  width: 100%;
+  margin: 0.5rem auto;
+  color: var(--accent-color);
+}
+.catFilter > li {
+  font-size: 14px;
+  color: rgb(32, 30, 30);
+
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.priceFilter,
+.starsFilter {
+  flex-direction: column;
+  margin: 0;
+}
+.filterContainer .inputContainer {
+  width: 100%;
+  padding: 0.25rem 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+}
+.inputContainer > input {
+  width: 100%;
+  margin: 0 0.25rem;
+  color: rgb(32, 30, 30);
+  border: 1px solid rgba(32, 30, 30, 0.72);
+  border-radius: 2px;
+  height: 25px;
+  text-align: center;
+}
+input:focus {
+  border: none;
+  outline: 1px solid var(--accent-color);
+}
+li:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+}
+.reset {
+  margin-top: 2rem;
+  border: none;
+  background-color: var(--accent-color);
+  height: 30px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  width: 100px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin: 2rem auto;
+}
+/* @media screen and (max-width: 800px) {
+  .filterContainer {
+    flex-direction: row;
+    max-width: 100%;
+  }
+} */

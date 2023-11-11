@@ -13,6 +13,7 @@ import {
   WishList,
   DetailView,
   CheckOut,
+  AllProducts,
 } from './pages'
 import { Navbar } from './components'
 import { getProducts } from './features/requestSlice/requestSlice'
@@ -38,6 +39,7 @@ function App() {
           <Route path='/wishlist' element={<WishList />} />
           <Route path='/detailview' element={<DetailView />} />
           <Route path='/checkout' element={<CheckOut />} />
+          <Route path='/allproducts' element={<AllProducts />} />
         </Routes>
       </BrowserRouter>
     </>
