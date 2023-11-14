@@ -23,7 +23,6 @@ export const Heart = ({ onClickAction }) => {
   const dispatch = useDispatch()
   const handleSingleItem = () => {
     dispatch(onClickAction)
-    toast.success('product added to wishlist')
   }
   return (
     <svg

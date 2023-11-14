@@ -53,6 +53,15 @@ const PayPalCheckout = () => {
         }}
         createOrder={createOrder}
         onApprove={onApprove}
+        style={{
+          layout: 'horizontal',
+          color: 'silver',
+          shape: 'rect',
+          label: 'paypal',
+          height: 40,
+          tagline: true,
+        }}
+        className={styles.customBtn}
       />
     </div>
   )

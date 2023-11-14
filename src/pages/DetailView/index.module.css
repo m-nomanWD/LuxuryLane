@@ -32,7 +32,7 @@
 }
 .ratingContainer {
   display: flex;
-  margin-left: -0.9rem;
+
   justify-content: flex-start;
   align-items: center;
   height: 40px;
@@ -47,20 +47,23 @@
 
   padding: 0;
 }
+
 .ratingStars {
-  margin: 0 0.8rem;
+  margin: 0 0.2rem;
 }
+
 .starFill {
-  fill: gold;
-  color: gold;
+  fill: var(--star-rating);
+  color: var(--star-rating);
 }
 .starEmpty {
-  color: gold;
+  color: var(--star-rating);
 }
 .ratingCount {
   margin: 0 1.5rem;
   font-weight: 500;
-  color: var(--accent-color);
+  color: var(--text-on-main-background);
+  margin-left: 0;
 }
 .heartContainer {
   display: flex;

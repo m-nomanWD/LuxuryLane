@@ -16,13 +16,13 @@ export default function Footer() {
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
                   class='w-6 h-6'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z'
                   />
                 </svg>
@@ -35,18 +35,18 @@ export default function Footer() {
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
                   class='w-6 h-6'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M15 10.5a3 3 0 11-6 0 3 3 0 016 0z'
                   />
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z'
                   />
                 </svg>
@@ -62,13 +62,13 @@ export default function Footer() {
                   xmlns='http://www.w3.org/2000/svg'
                   fill='none'
                   viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
                   class='w-6 h-6'
                 >
                   <path
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
                     d='M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75'
                   />
                 </svg>
@@ -93,13 +93,13 @@ export default function Footer() {
                   width='100'
                   height='100'
                   viewBox='0,0,256,256'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                 >
                   <g>
                     <g transform='scale(2,2)'>
                       <path
                         d='M84.9,48.1h-14.2v-9.3c0,-3.5 2.3,-4.3 4,-4.3c1.6,0 10.1,0 10.1,0v-15.4l-14,-0.1c-15.3,0 -18.8,11.5 -18.8,18.9v10.3h-8.9v15.8h8.9c0,20.4 0,45 0,45h18.7c0,0 0,-24.8 0,-45h12.6z'
-                        fill-opacity='0'
+                        fillOpacity='0'
                         fill='#312d2d'
                       ></path>
                       <path
@@ -127,9 +127,9 @@ export default function Footer() {
                   height='100'
                   viewBox='0,0,256,256'
                   // viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
-                  class='w-6 h-6'
+                  className='w-6 h-6'
                 >
                   <g transform=''>
                     <g>
@@ -149,9 +149,9 @@ export default function Footer() {
                   height='100'
                   viewBox='0,0,256,256'
                   // viewBox='0 0 24 24'
-                  stroke-width='1.5'
+                  strokeWidth='1.5'
                   stroke='currentColor'
-                  class='w-6 h-6'
+                  className='w-6 h-6'
                 >
                   <g>
                     <g transform='scale(5.12,5.12)'>
@@ -174,22 +174,22 @@ export default function Footer() {
                       <g transform='scale(5.12,5.12)'>
                         <path
                           d='M18.5,45c-6.893,0 -12.5,-5.607 -12.5,-12.5c0,-6.893 5.607,-12.5 12.5,-12.5v4c-4.687,0 -8.5,3.813 -8.5,8.5c0,4.687 3.813,8.5 8.5,8.5c4.687,0 8.5,-3.813 8.5,-8.5v-27.5h4v27.5c0,6.893 -5.607,12.5 -12.5,12.5z'
-                          fill-opacity='0'
+                          fillOpacity='0'
                           fill='#312d2d'
                         ></path>
                         <path
                           d='M41,19c-6.113,0 -14,-6.789 -14,-14h4c0,4.732 5.961,10 10,10z'
-                          fill-opacity='0'
+                          fillOpacity='0'
                           fill='#312d2d'
                         ></path>
                         <path
                           d='M23.5,47c-6.893,0 -12.5,-5.607 -12.5,-12.5c0,-6.893 5.607,-12.5 12.5,-12.5v4c-4.687,0 -8.5,3.813 -8.5,8.5c0,4.687 3.813,8.5 8.5,8.5c4.687,0 8.5,-3.813 8.5,-8.5v-27.5h4v27.5c0,6.893 -5.607,12.5 -12.5,12.5z'
-                          fill-opacity='0'
+                          fillOpacity='0'
                           fill='#ff64bd'
                         ></path>
                         <path
                           d='M46,21c-6.113,0 -14,-6.789 -14,-14h4c0,4.732 5.961,10 10,10z'
-                          fill-opacity='0'
+                          fillOpacity='0'
                           fill='#ff64bd'
                         ></path>
                         <path

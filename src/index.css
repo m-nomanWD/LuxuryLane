@@ -81,7 +81,8 @@ svg {
   width: 24px;
   height: 24px;
   color: var(--accent-color);
-  margin-right: -30px;
+  cursor: pointer;
+  /* margin-right: -30px; */
 }
 ul {
   display: flex;
@@ -113,6 +114,7 @@ svg:hover {
 /* Primary Button */
 .primary-button {
   width: 180px;
+  min-width: fit-content;
   height: 40px;
   background-color: var(--primary-button-background);
   color: var(--primary-button-text);
@@ -169,6 +171,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.initial-loading {
+  background-color: rgba(0, 0, 0, 0.713);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 /* Mobile Phones */
 @media (max-width: 600px) {
@@ -186,6 +196,7 @@ code {
   .primary-button,
   .secondary-button,
   .disabled-button {
+    min-width: fit-content;
     width: 50%; /* Half width on medium screens */
   }
 }

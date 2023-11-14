@@ -20,6 +20,7 @@
 .contact {
   margin-right: 3rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 .contact div {
   display: flex;
@@ -27,7 +28,7 @@
   margin: 0.5rem 0;
 }
 .contact span {
-  margin-right: 4rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 .contact h4 {

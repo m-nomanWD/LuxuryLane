@@ -30,15 +30,21 @@
   height: 100%;
   object-fit: cover;
 }
-h6 {
+.wishlistContainer h6 {
   margin: 0;
   padding: 0;
   font-size: 14px;
+  color: var(--text-on-main-background);
+  transition: 0.3s all linear;
+  text-decoration: underline;
 }
-h3 {
+.wishlistContainer h6:hover {
+  color: var(--accent-color);
+}
+.wishlistContainer h3 {
   margin: 0;
   padding: 0;
-  color: var(--accent-color);
+  color: var(--text-on-main-background);
   font-weight: 700;
 }
 .info {

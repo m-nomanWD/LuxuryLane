@@ -18,6 +18,7 @@ export default function Product({ product }) {
   const dispatch = useDispatch()
   const stars = [1, 2, 3, 4, 5]
   const { price, title, id, image, rating, isInCart } = product
+  const checkItemInCart = cartItems.filter((item) => item.id === id)
   const handleClickAction = () => {
     addToCart(product)
   }
@@ -40,11 +41,11 @@ export default function Product({ product }) {
           </div>
         </div>
         <div className='rating-container'>
-          {stars.map((star) => {
+          {stars.map((star, index) => {
             return (
               <span>
                 <Star
-                  key={star}
+                  key={index}
                   className={rating.rate >= star ? 'star-fill' : 'star-emply'}
                 />
               </span>
@@ -53,7 +54,7 @@ export default function Product({ product }) {
           <BodyText children={`(${rating.count}+)`} />
         </div>
 
-        {!isInCart ? (
+        {checkItemInCart.length === 0 ? (
           <button
             className='primary-button button'
             onClick={() => {

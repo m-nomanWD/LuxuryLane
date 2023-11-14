@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { act } from 'react-dom/test-utils'
 
 import toast from 'react-hot-toast'
 const initialState = {
@@ -13,11 +14,18 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const newCartItem = { ...action.payload, isInCart: true }
-      state.cartItems.push(newCartItem)
-      state.amount += 1
-      state.total += action.payload.price
-      toast.success('item add to cart')
+      const checkItem = state.cartItems.filter(
+        (item) => item.id === action.payload.id
+      )
+      if (checkItem.length !== 0) {
+        toast.error('item is already in the cart')
+      } else {
+        const newCartItem = { ...action.payload, isInCart: true }
+        state.cartItems.push(newCartItem)
+        state.amount += 1
+        state.total += action.payload.price
+        toast.success('item add to cart')
+      }
     },
     increase: (state, action) => {
       const selectedItem = state.cartItems.find(

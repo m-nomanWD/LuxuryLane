@@ -10,7 +10,7 @@ export default function Hero() {
         <Heading children='FURNITURE AT COST' level={1} />
         <BodyText children='Suspendisse varirus enim in eros elementum tritique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.' />
         <Link to='/allproducts'>
-          <Button children='DISCOVER MORE' type='primary-button ' />
+          <button className='primary-button button'>Discover More</button>
         </Link>
       </div>
     </header>

@@ -33,7 +33,7 @@ export default function CartContainer() {
             <h4>TOTAL</h4>
           </div>
           <div className='total-amount'>
-            <h3>{`$ ${total}`}</h3>
+            <h3>{`$ ${total.toFixed(2)}`}</h3>
           </div>
         </div>
         <Link style={{ width: '180px' }} to={'/checkout'}>

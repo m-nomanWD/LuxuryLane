@@ -25,5 +25,8 @@ button[class^='paypal'] {
 }
 
 button[class^='paypal']:hover {
-  background-color: #005689; /* Change the background color on hover */
+  background-color: rgb(123, 0, 137); /* Change the background color on hover */
+}
+.customBtn {
+  border: 1px solid red;
 }

@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import WishListItem from './WishListItem'
 import { HomeIcone } from '../../constants'
 import { DeleteItem } from '../../constants'
-
+import { Link } from 'react-router-dom'
+import { handleClearWishlist } from '../../features/wishlist/wishlistSlice'
 export default function WishList() {
   const dispatch = useDispatch()
   const { wishlistItems } = useSelector((store) => store.wishlist)
@@ -12,7 +13,9 @@ export default function WishList() {
     return (
       <div className={styles.wishlistContainer}>
         <h3>Is Currently Empty </h3>
-        <HomeIcone />
+        <Link to='/'>
+          <HomeIcone />
+        </Link>
       </div>
     )
   }
@@ -24,7 +27,12 @@ export default function WishList() {
             return <WishListItem wishlistItem={item} />
           })}
         </div>
-        <button className='primary-button button'>Clear Wishlist</button>
+        <button
+          className='primary-button button'
+          onClick={() => dispatch(handleClearWishlist())}
+        >
+          Clear Wishlist
+        </button>
       </div>
     </>
   )

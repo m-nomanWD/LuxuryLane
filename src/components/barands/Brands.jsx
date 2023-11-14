@@ -29,17 +29,12 @@ export default function Brands() {
   let counter = 1
   useEffect(() => {
     const timeIter = setInterval(() => {
-      if (scroll >= 900) {
-        console.log('hello form contition', scroll)
+      if (scroll + width >= 1600) {
         setScroll(0)
       } else {
         setScroll(width + 120)
         setScroll(scroll + 120)
-        console.log('hello form else', scroll + width)
       }
-
-      console.log(scroll)
-      console.log(width)
     }, 2000)
     return () => clearInterval(timeIter)
   })
@@ -54,9 +49,10 @@ export default function Brands() {
         <span className={styles.left} onClick={() => setScroll(width - 120)}>
           <ChevronDown />
         </span> */}
-        {imgArray.map((img) => {
+        {imgArray.map((img, index) => {
           return (
             <img
+              key={index}
               style={{ transform: `translateX(-${scroll}px)` }}
               src={img}
               alt=''

@@ -8,9 +8,7 @@ export default function FilterTab() {
   )
   const dispatch = useDispatch()
   // dispatch(handleModifier('/products?limit=3'))
-  if (isLoading) {
-    return <h1>Loading...</h1>
-  }
+
   return (
     <>
       <div className='filter-tab'>

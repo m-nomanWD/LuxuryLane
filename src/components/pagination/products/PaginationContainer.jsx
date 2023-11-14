@@ -1,30 +1,39 @@
 import React, { useEffect } from 'react'
 import styles from './index.module.css'
 import Product from '../../products/product/Product'
-import { handleSetProduct } from '../../../features/filterSlice/filterSlice'
+import {
+  handleFilter,
+  handleSetProduct,
+} from '../../../features/filterSlice/filterSlice'
 import { useSelector, useDispatch } from 'react-redux'
+// import { handleFilter } from '../../../features/filterSlice/filterSlice'
 export default function PaginationContainer() {
   const dispatch = useDispatch()
-  const { projucts } = useSelector((store) => store.products)
-  const { filterProducts, allProducts } = useSelector(
+  const { projucts, isLoading } = useSelector((store) => store.products)
+  const { filterProducts, allProducts, price, star, category } = useSelector(
     (store) => store.filterSlice
   )
+  const { cartItems } = useSelector((store) => store.cart)
   useEffect(() => {
     dispatch(handleSetProduct(projucts))
-    console.log('hello')
-  }, [projucts])
+  }, [isLoading, cartItems])
 
-  if (allProducts.length === 0) {
-    return <h3>Loading...</h3>
-  }
-  if (filterProducts.length === 0) {
-    return <h3>No item found</h3>
+  if (filterProducts.length === 0 && !isLoading) {
+    return (
+      <div className={styles.containerPagination}>
+        <div className={styles.productsContainer}>
+          {allProducts.map((product) => (
+            <Product key={product.id} product={product} />
+          ))}
+        </div>
+      </div>
+    )
   }
   return (
     <div className={styles.containerPagination}>
       <div className={styles.productsContainer}>
         {filterProducts.map((product) => (
-          <Product product={product} />
+          <Product key={product.id} product={product} />
         ))}
       </div>
     </div>

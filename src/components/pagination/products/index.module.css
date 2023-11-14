@@ -1,6 +1,6 @@
 .containerPagination {
   max-width: 1200px;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,27 @@
 }
 .productsContainer {
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
   margin-left: 2rem;
+
+  width: 100%;
+}
+.itemNotFound {
+  font-size: 24px;
+  margin: 2rem auto;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media screen and (max-width: 860px) {
+  .productsContainer {
+    justify-content: center;
+    margin-top: 2rem;
+  }
 }

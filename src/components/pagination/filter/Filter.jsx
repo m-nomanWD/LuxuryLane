@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './index.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { handleFilter } from '../../../features/filterSlice/filterSlice'
 export default function Filter() {
   const dispatch = useDispatch()
-  const { catagroies } = useSelector((store) => store.products)
+  const { catagroies, projucts } = useSelector((store) => store.products)
+
   const [filterValue, setFilterValue] = useState({
     price: 9.99,
     stars: 1,
     category: 'all',
   })
+
   const handleCategoryClick = (catagory) => {
     setFilterValue((prevFilterValue) => ({
       ...prevFilterValue,
@@ -48,28 +50,34 @@ export default function Filter() {
       </header>
       <ul className={styles.catFilter}>
         <h3> Categories:</h3>
-        {catagroies.map((catagory, index) => (
-          <li key={index} onClick={() => handleCategoryClick(catagory)}>
-            {catagory}
-          </li>
-        ))}
+        <div className={styles.links}>
+          {catagroies.map((catagory, index) => (
+            <li key={index} onClick={() => handleCategoryClick(catagory)}>
+              {catagory}
+            </li>
+          ))}
+        </div>
       </ul>
       <div className={styles.priceFilter}>
         <h3>Price:</h3>
-        <div className={styles.inputContainer}>
-          <input
-            type='range'
-            name=''
-            id=''
-            min={1}
-            max={1000}
-            value={filterValue.price}
-            onChange={handlePriceChange}
-          />
-        </div>
-        <div className={styles.inputContainer}>
-          <input type='text' value={`$ ${filterValue.price}`} />
-          <input type='text' name='' id='' readOnly value={`$1000`} />
+        <div className={styles.priceMain}>
+          {' '}
+          <div className={styles.inputContainer}>
+            <input
+              type='range'
+              name=''
+              id=''
+              min={1}
+              max={1000}
+              readOnly
+              value={filterValue.price}
+              onChange={handlePriceChange}
+            />
+          </div>
+          <div className={styles.inputContainer}>
+            <input type='text' value={`$ ${filterValue.price}`} />
+            <input type='text' readOnly defaultValue={`$1000`} />
+          </div>
         </div>
       </div>
       <div className={styles.starsFilter}>

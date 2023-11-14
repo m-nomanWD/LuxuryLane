@@ -22,6 +22,9 @@ const filterSlice = createSlice({
           (product) =>
             product.price >= parseInt(price) && product.rating.rate >= stars
         )
+        // state.price = price
+        // state.star = stars
+        // state.category = category
 
         state.filterProducts = newList
       } else {
@@ -31,12 +34,19 @@ const filterSlice = createSlice({
             product.rating.rate >= stars &&
             product.category === category
         )
-        console.log(newList)
+        console.log(action.payload)
+        // state.price = price
+        // state.star = stars
+        // state.category = category
         state.filterProducts = newList
       }
     },
     handleSetProduct: (state, action) => {
-      state.filterProducts = action.payload
+      // state.filterProducts = action.payload
+      // state.filterProducts = state.allProducts.filter((productOuter) => {
+      //   state.filterProducts.filter((product) => product.id === productOuter.id)
+      // })
+
       state.allProducts = action.payload
     },
   },

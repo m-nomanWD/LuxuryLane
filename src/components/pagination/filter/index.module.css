@@ -8,6 +8,7 @@
   height: fit-content;
   margin-right: auto;
   align-self: flex-start;
+  border-radius: 6px;
 }
 header {
   margin: 0 auto 0.5rem auto;
@@ -38,7 +39,7 @@ header > h2 {
   margin: 0.5rem auto;
   color: var(--accent-color);
 }
-.catFilter > li {
+.catFilter li {
   font-size: 14px;
   color: rgb(32, 30, 30);
 
@@ -76,7 +77,6 @@ li:hover {
   color: var(--accent-color);
 }
 .reset {
-  margin-top: 2rem;
   border: none;
   background-color: var(--accent-color);
   height: 30px;
@@ -89,9 +89,40 @@ li:hover {
   cursor: pointer;
   margin: 2rem auto;
 }
-/* @media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
   .filterContainer {
-    flex-direction: row;
     max-width: 100%;
+    align-items: flex-start;
+    margin: auto auto 1.5rem auto;
+    padding: 1rem;
   }
-} */
+
+  .catFilter {
+    /* flex-direction: row; */
+    align-items: center;
+  }
+  .filterContainer h3 {
+    /* width: fit-content; */
+    margin-right: 1rem;
+  }
+  .catFilter .links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .catFilter li {
+    margin: 0.5rem 0.5rem 0 0.5rem;
+    padding: 0;
+  }
+  .reset {
+    margin: 0.5rem auto;
+  }
+  .priceFilter {
+    /* flex-direction: row; */
+  }
+  .priceMain {
+    display: flex;
+  }
+  .inputContainer {
+    padding: 0.5rem;
+  }
+}

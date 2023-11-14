@@ -18,16 +18,30 @@ import {
 import { Navbar } from './components'
 import { getProducts } from './features/requestSlice/requestSlice'
 import { useEffect } from 'react'
+import { ClipLoader } from 'react-spinners'
 
 function App() {
   const dispatch = useDispatch()
-  const { cart } = useSelector((store) => store.cart)
+  const { isLoading } = useSelector((store) => store.products)
   const { urlModifier } = useSelector((store) => store.products)
 
   useEffect(() => {
     dispatch(getProducts(urlModifier))
   }, [])
-
+  if (isLoading) {
+    return (
+      <div className='initial-loading'>
+        <ClipLoader
+          color='#e83e8c'
+          loading={isLoading}
+          // cssOverride={override}
+          size={100}
+          aria-label='Loading Spinner'
+          data-testid='loader'
+        />
+      </div>
+    )
+  }
   return (
     <>
       <BrowserRouter>
